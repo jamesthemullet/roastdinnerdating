@@ -1,0 +1,25 @@
+<form action="/signup" method="POST">
+    {{#each errors}}
+    <div>
+        <a href="#" data-dismiss="alert" aria-label="close">&times;</a>
+        {{text}}
+    </div>
+    {{/each}}
+    <div>
+        <label for="username">Full name</label>
+        <input type="text" name="username" id="username" value="{{fullname}}" required>
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" value="{{email}}" required>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" value="{{password}}" required>
+    </div>
+    <div>
+        <label for="password2">Confirm password</label>
+        <input type="password" name="password2" id="password2" required>
+    </div>
+    <button type="submit">Sign up</button>
+</form>

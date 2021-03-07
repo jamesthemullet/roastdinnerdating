@@ -1,1 +1,36 @@
 <h1>Welcome to Roast Dinner Dating</h1>
+{{#if user}}
+<p>You are logged in...</p>
+{{else}}
+<div>
+    <h1>
+        <a href="/auth/facebook">
+            <button type="button" class="btn btn-primary">Login with Facebook</button>
+        </a>
+    </h1>
+    <h1>
+        <a href="/auth/google">
+            <button type="button" class="btn btn-primary">Login with Google</button>
+        </a>
+    </h1>
+    <p>or</p>
+    <form action="/login" method="POST">
+        {{#each success}}
+            <p>{{text}}</p>
+        {{/each}}
+        {{#each errors}}
+            <p>{{text}}</p>
+        {{/each}}
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <a href="/newAccount">Sign up</a>
+</div>
+{{/if}}
